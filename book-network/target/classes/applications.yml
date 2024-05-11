@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: username
+    password: Sameer@1999
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql : false
+      properties :
+        hibernates:
+        format_sql : true
+        database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    multipart:
+      max-file-size: 2MB # Maximum size allowed for file uploads
+      max-request-size: 10MB # Maximum size allowed for multipart/form-data requests
+      enabled: true # Enable/disable multipart uploads
+
+      server :
+        port : 90
+
+      mail:
+        host: smtp.example.com
+        port: 587
+        username: linux@example.com
+        password: Sameer@1999
+        properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
+                connectiontimeout: 5000
+                timeout: 3000
+                writetimeout: 5000
+                application :
+                  security :
+                    jwt :
+                      secret-key : 566F472A4F5F6867FA9D8D7B2DBF3449735993466C9CE1F856FA8B6447
+                      expiration : 8640000
